@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+<header>
+  <h1>Drunky's DUI Car Lot</h1>
+</header>
+
+    <div class="left">
+    <h2>List of Used Cars</h2>
+
+    <ul>
+      <% for(var i = 0; i < vehicleList.length; i++) { %>
+        <li><%= vehicleList[i].Year %>
+          <%= vehicleList[i].Make %>
+        <%= vehicleList[i].Model %>
+
+        <ul>
+    <li><%= vehicleList[i].KBBValue %></li>
+  <li><%= vehicleList[i].Status %></li>
+  <ul>
+  <li><form action="/update/<%= vehicleList[i].vehicleID %>" method="post">
+    <input type="text" name="KBBValue">
+  <button> Edit the Price</button>
+        </form>
+      </li>
+  <li><form action="/sold/<%= vehicleList[i].vehicleID %>" method="post">
+  <button name="Status"> Mark As Sold</button>
+        </form>
+      </li>
+    </ul>
+    </li>
+  </ul>
+        <% } %>
+</ul>
+  </div>
+  <div class="right">
+
+
+    <h3>ADD NEW VEHICLE TO INVENTORY</h3>
+    <form action="/add" method="POST">
+      <p>Year: <input type="text" name="Year"></p>
+      <p>Make: <input type="text" name="Make"></p>
+      <p>Model: <input type="text" name="Model"></p>
+      <p>Price: <input type="text" name="KBBValue"></p>
+      <p>Status: <input type="text" name="Status"></p>
+      <button type="submit">Add it</button>
+    </form>
+    <h3>REMOVE SOLD CARS</h3>
+    <form action="/remove" method="post">
+      <button type="submit">Remove</button>
+    </form>
+      </div>
+      <div class="image">
+      <img src="http://images.car.bauercdn.com/pagefiles/70980/001.jpg" alt=""></div>
+<footer><a href="https://github.com/Racecarpenter/express-ejs-dealership">&copyRace Carpenter 2017</a></footer>
+  </div>
+  </body>
+</html>

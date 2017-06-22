@@ -1,0 +1,70 @@
+body{
+  margin: 0px auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+.left{
+  padding-left: 10%;
+  width: 40%;
+  margin: 0px;
+  margin-top: 115px;
+  float: left;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.right{
+  padding-right: 10%;
+  width: 40%;
+  margin: 0px;
+  margin-top: 115px;
+  float: right;
+}
+
+li{
+  color: blue;
+}
+.image{
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+
+img{
+  height: 200px;
+  width: 400px;
+}
+header{
+  text-align: center;
+  font-family: monospace;
+  position: fixed;
+  top: 0px;
+  background-color: blue;
+  color: white;
+  height: 40px;
+  width: 100%;
+}
+
+header h1{
+  margin: 0px auto;
+}
+footer {
+  font-family: monospace;
+  bottom: 0px;
+  position: fixed;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  background-color: blue;
+  height: 60px;
+  width: 100%;
+}
+
+a {
+  color: white;
+}
