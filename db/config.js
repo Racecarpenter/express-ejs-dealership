@@ -1,10 +1,14 @@
 var Loki = require('lokijs');
 var db = new Loki('loki.json');
-var vehicles = db.addCollection('vehicles');
+var vehicleList = db.addCollection('vehicleList');
 
-vehicles.insert([{
-  "vehicleID": 1
+vehicleList.insert([{
+  "vehicleID": 1,
+  "Make": "Ford",
+  "Model": "Mustang",
+  "Year": 1979,
+  "KBBValue": 28999
 }]);
 module.exports = {
-  vehicles: vehicles
+  vehicleList: vehicleList
 };
