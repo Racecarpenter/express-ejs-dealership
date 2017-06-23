@@ -5,6 +5,7 @@ var port = process.env.PORT || 8000;
 var path = require('path');
 var vehicleRoute = require('./routes/vehicles');
 var indexRoute = require('./routes/index');
+var cookieParser = require('cookie-parser');
 
 var app = express();
 
