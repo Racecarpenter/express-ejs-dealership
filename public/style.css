@@ -2,6 +2,7 @@ body{
   margin: 0px auto;
   width: 100vw;
   height: 100vh;
+  position: fixed;
 }
 
 .container{
@@ -14,8 +15,13 @@ body{
   margin: 0px;
   margin-top: 115px;
   float: left;
-  overflow-y: scroll;
   height: 100%;
+}
+
+.info{
+  width: 100%;
+  height: 60%;
+  overflow-y: scroll;
 }
 
 .right{

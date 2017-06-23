@@ -12,6 +12,9 @@
 </header>
 
     <div class="left">
+      <div class="info">
+
+
     <h2>List of Used Cars</h2>
 
     <ul>
@@ -32,12 +35,19 @@
   <li><form action="/sold/<%= vehicleList[i].vehicleID %>" method="post">
   <button name="Status"> Mark As Sold</button>
         </form>
+        <li><form action="/available/<%= vehicleList[i].vehicleID %>" method="post">
+        <button name="Status"> Mark As Available</button>
+      </form></li>
+      <li><form action="/pending/<%= vehicleList[i].vehicleID %>" method="post">
+        <button name="Status"> Mark As Pending</button>
+      </form></li>
       </li>
     </ul>
     </li>
   </ul>
         <% } %>
 </ul>
+</div>
   </div>
   <div class="right">
 

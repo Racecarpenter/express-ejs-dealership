@@ -12,7 +12,10 @@ vehicleList.insert([{
     "Model": "Mustang",
     "Year": 1979,
     "KBBValue": "$28999",
-    "Status": "Available"
+    "Status": "Available",
+    "Mileage": 50205,
+    "Condition": "Excellent",
+    "Accident": "No"
   },
   {
     "vehicleID": 2,
@@ -20,15 +23,21 @@ vehicleList.insert([{
     "Model": "D",
     "Year": 1984,
     "KBBValue": "$55999",
-    "Status": "Available"
+    "Status": "Available",
+    "Mileage": 255565,
+    "Condition": "Okay",
+    "Accident": "Yes"
   },
   {
     "vehicleID": 3,
     "Make": "Ferrari",
-    "Model": "Countage",
+    "Model": "Countach",
     "Year": 1999,
     "KBBValue": "$79999",
-    "Status": "Available"
+    "Status": "Available",
+    "Mileage": 50205,
+    "Condition": "Excellent",
+    "Accident": "No"
   }
 ]);
 
@@ -54,11 +63,30 @@ router.post('/add', function(req, res) {
   res.redirect('/');
 })
 
+
 router.post('/sold/:id', function(req, res, next) {
   vehicleList.findAndUpdate({
     vehicleID: parseInt(req.params.id)
   }, function(data) {
     data.Status = "Sold"
+  })
+  res.redirect('/');
+});
+
+router.post('/available/:id', function(req, res, next) {
+  vehicleList.findAndUpdate({
+    vehicleID: parseInt(req.params.id)
+  }, function(data) {
+    data.Status = "Available"
+  })
+  res.redirect('/');
+});
+
+router.post('/pending/:id', function(req, res, next) {
+  vehicleList.findAndUpdate({
+    vehicleID: parseInt(req.params.id)
+  }, function(data) {
+    data.Status = "Sale Pending"
   })
   res.redirect('/');
 });
